@@ -19,12 +19,6 @@ class Find_Iclicker
     @headers = {'Authorization' => "Bearer #{@auth_token}", 'Content-Type' => 'application/json'}
   end
 
-  def filter(hsh, *keys)
-    hsh.dup.tap do |h|
-      keys.each { |k| h.delete(k) }
-    end
-  end
-
 # iterate through canvas tabs api
   def list_course_nav(canvas_course_id)
     options = {
